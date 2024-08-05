@@ -1,5 +1,7 @@
 import std;
 
-int main() {
+int
+main()
+{
     std::println("Hello World!");
 }

@@ -1,6 +1,10 @@
 # cpp23-project-template
 C++23 Project Template with CMake 3.30 to support C++20 modules and C++23 `import std`
 
+- [References](#references)
+- [Using clang++ and libc++](#use-clang-and-libc)
+- [Build Commands](#build-commands)
+
 ## References
 
 - [import std in CMake 3.30](https://www.kitware.com/import-std-in-cmake-3-30/#11901aae-49be-4b00-868a-09413f3de1e9-link)
@@ -39,7 +43,7 @@ C++23 Project Template with CMake 3.30 to support C++20 modules and C++23 `impor
         export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
         export LD_LIBRARY_PATH=/usr/local/lib/x86_64-unknown-linux-gnu:$LD_LIBRARY_PATH
         ```
-- install pre-built binaries
+- install pre-built binaries (when clang 19 binaries are released)
     ```sh
     wget https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
     tar -xvf clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
@@ -66,3 +70,12 @@ C++23 Project Template with CMake 3.30 to support C++20 modules and C++23 `impor
             ```sh
             echo 'export LD_LIBRARY_PATH=/opt/clang-18.1.8/lib/x86_64-unknown-linux-gnu::$LD_LIBRARY_PATH' >> ~/.bashrc
             ```
+
+## Build Commands
+
+```sh
+mkdir build
+cd build
+cmake .. # add -G ninja if not set to default
+cmake --build .
+```

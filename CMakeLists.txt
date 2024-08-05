@@ -28,3 +28,5 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(test test.cpp)
+
+include(${CMAKE_SOURCE_DIR}/cmake/clang_format.cmake)

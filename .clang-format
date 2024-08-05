@@ -1,0 +1,65 @@
+---
+Language:        Cpp
+
+Standard: Latest
+IndentWidth: 4
+ColumnLimit: 80
+MaxEmptyLinesToKeep: 2
+FixNamespaceComments: true
+ShortNamespaceLines: 0
+AccessModifierOffset: -4
+EmptyLineAfterAccessModifier: Never
+EmptyLineBeforeAccessModifier: Always
+IncludeBlocks: Merge
+AlignAfterOpenBracket: BlockIndent
+AlignArrayOfStructures: Right
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignConsecutiveMacros: Consecutive
+AllowShortCaseExpressionOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseColons: false
+AlignEscapedNewlines: LeftWithLastLine
+BreakBeforeBinaryOperators: NonAssignment
+AlignOperands: AlignAfterOperator
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 0
+# AllowAllArgumentsOnNextLine: true
+# AllowAllParametersOfDeclarationOnNextLine: true
+AllowBreakBeforeNoexceptSpecifier: OnlyWithParen
+AllowShortBlocksOnASingleLine: Always
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+BreakAfterReturnType: All
+AllowShortIfStatementsOnASingleLine: AllIfsAndElse
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakBeforeMultilineStrings: true
+BreakStringLiterals: true
+BreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+BitFieldColonSpacing: After
+BreakBeforeBraces: Allman
+BreakAfterAttributes: Leave
+PackConstructorInitializers: CurrentLine
+BreakConstructorInitializers: BeforeComma
+IndentRequiresClause: true
+RequiresClausePosition: OwnLine
+RequiresExpressionIndentation: OuterScope
+PointerAlignment: Left  # only works for one pointer declaration on a single line
+ReferenceAlignment: Left  # only works for one ref declaration on a single line
+QualifierAlignment: Right
+# QualifierOrder: [inline, static, constexpr, friend, type, const, volatile]
+SeparateDefinitionBlocks: Leave
+SortUsingDeclarations: LexicographicNumeric
+SpaceAfterTemplateKeyword: false
+SpaceAroundPointerQualifiers: Both
+SpaceBeforeCpp11BracedList: false
+...
