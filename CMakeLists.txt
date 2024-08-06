@@ -14,6 +14,11 @@ set(CMAKE_CXX_COMPILER clang++)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
 
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+add_compile_options(-Wall -Wextra -Wpedantic)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # C++ needs to be enabled.
 project(cpp23-project-template LANGUAGES CXX)
 
@@ -22,11 +27,16 @@ project(cpp23-project-template LANGUAGES CXX)
 set(CMAKE_CXX_MODULE_STD 1)
 
 
-set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED YES)
-add_compile_options(-Wall -Wextra -Wpedantic)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+include(cmake/clang_format.cmake)
+include(cmake/CPM.cmake)
 
-add_executable(test test.cpp)
+# Dependencies Management through CPM
+CPMAddPackage("gh:boost-ext/ut@2.1.0")
 
-include(${CMAKE_SOURCE_DIR}/cmake/clang_format.cmake)
+add_subdirectory(module)
+add_subdirectory(test)
+
+# Create an executable
+add_executable(main main.cpp)
+# Link to the library foo
+target_link_libraries(main foo)

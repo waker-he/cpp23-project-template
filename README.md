@@ -1,22 +1,57 @@
 # cpp23-project-template
 C++23 Project Template with CMake 3.30 to support C++20 modules and C++23 `import std`
 
-- [References](#references)
-- [Using clang++ and libc++](#use-clang-and-libc)
+- [Requirements](#requirements)
 - [Build Commands](#build-commands)
-
-## References
-
-- [import std in CMake 3.30](https://www.kitware.com/import-std-in-cmake-3-30/#11901aae-49be-4b00-868a-09413f3de1e9-link)
+- [Suggested Project Structure](#suggested-project-structure)
+- [Using clang++ and libc++](#use-clang-and-libc)
+- [References](#references)
 
 ## Requirements
 
 - C++23
-- clang++ 19.1.0 with libc++
-    - clang 18 does not install module-related files by default: https://gitlab.kitware.com/cmake/cmake/-/issues/25965#note_1523575
+- Clang/LLVM 19.1.0
+    - Clang/LLVM 18 does not install module-related files by default: https://gitlab.kitware.com/cmake/cmake/-/issues/25965#note_1523575
 - CMake 3.30
 - Ninja 1.11 (used as CMake generator)
 - Linux
+
+## Build Commands
+
+```sh
+mkdir build
+cd build
+cmake .. # add -G ninja if not set to default
+cmake --build .
+```
+
+## Suggested Project Structure
+
+```
+project_root/
+│
+├── module/                      # Modules directory
+│   ├── <MODULE_NAME>/           # Specific module
+│   │   ├── <MODULE_NAME>.cppm   # Module interface
+│   │   ├── partition1/          # First partition directory
+│   │   │   └── ...              # Partition1 related C++ files
+│   │   ├── partition2/
+│   │   │   └── ...
+│   │   └── ...
+│   ├── common/                  # Common utilities used across modules
+│   └── ...
+│
+├── test/                        # Test code for modules
+│   └── ...
+│
+├── docs/                        # Documentation
+│   └── ...
+│
+├── build/                       # Build scripts and configurations
+│   └── ...
+│
+└── main.cpp                     # Main application entry point, if applicable
+```
 
 ## Use clang++ and libc++
 
@@ -71,11 +106,8 @@ C++23 Project Template with CMake 3.30 to support C++20 modules and C++23 `impor
             echo 'export LD_LIBRARY_PATH=/opt/clang-18.1.8/lib/x86_64-unknown-linux-gnu::$LD_LIBRARY_PATH' >> ~/.bashrc
             ```
 
-## Build Commands
+## References
 
-```sh
-mkdir build
-cd build
-cmake .. # add -G ninja if not set to default
-cmake --build .
-```
+- [import CMake; the Experiment is Over!](https://www.kitware.com/import-cmake-the-experiment-is-over/)
+- [import std in CMake 3.30](https://www.kitware.com/import-std-in-cmake-3-30/#11901aae-49be-4b00-868a-09413f3de1e9-link)
+- https://github.com/cpm-cmake/CPM.cmake
