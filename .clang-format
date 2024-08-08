@@ -59,7 +59,7 @@ QualifierAlignment: Right
 # QualifierOrder: [inline, static, constexpr, friend, type, const, volatile]
 SeparateDefinitionBlocks: Leave
 SortUsingDeclarations: LexicographicNumeric
-SpaceAfterTemplateKeyword: false
+SpaceAfterTemplateKeyword: true
 SpaceAroundPointerQualifiers: Both
 SpaceBeforeCpp11BracedList: false
 ...
