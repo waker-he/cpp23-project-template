@@ -32,14 +32,14 @@ project_root/
 │
 ├── module/                      # Modules directory
 │   ├── <MODULE_NAME>/           # Specific module
-│   │   ├── <MODULE_NAME>.cppm   # Module interface
-│   │   ├── partition1/          # First partition directory
-│   │   │   └── ...              # Partition1 related C++ files
-│   │   ├── partition2/
+│   │   ├── <MODULE_NAME>.cppm   # Module primary interface unit
+│   │   ├── submodule1/          # First submodule directory
+│   │   │   └── ...              # submodule1 related module partition units
+│   │   ├── submodule2/
 │   │   │   └── ...
 │   │   └── ...
 │   ├── common/                  # Common utilities used across modules
-│   └── ...
+│   └── ...                      # Other Modules
 │
 ├── test/                        # Test code for modules
 │   └── ...
