@@ -10,7 +10,7 @@ ShortNamespaceLines: 0
 AccessModifierOffset: -4
 EmptyLineAfterAccessModifier: Never
 EmptyLineBeforeAccessModifier: Always
-IncludeBlocks: Merge
+IncludeBlocks: Preserve
 AlignAfterOpenBracket: BlockIndent
 AlignArrayOfStructures: Right
 AlignConsecutiveAssignments: Consecutive
